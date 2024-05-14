@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { CustomerComponent } from "./customers/customers.component";
+import { CustomerModule } from "./customers/customers.module";
 
 @Component({
   selector: 'app-root',
+  template: `
+    <app-customers></app-customers>
+  `,
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [CustomerModule]
 })
-export class AppComponent {
-  title = 'my-angular-app';
+export class AppComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+
 }
