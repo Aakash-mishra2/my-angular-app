@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { CustomerComponent } from "./customers/customers.component";
-import { CustomerModule } from "./customers/customers.module";
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CustomersModule } from './customers/customers.module';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
     <app-customers></app-customers>
   `,
-  standalone: true,
-  imports: [CustomerModule]
+  imports: [CustomersModule]
 })
 export class AppComponent implements OnInit {
   constructor() { }
