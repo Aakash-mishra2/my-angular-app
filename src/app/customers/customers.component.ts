@@ -8,6 +8,15 @@ import { ICustomer } from '../shared/interfaces';
 export class CustomersComponent implements OnInit {
     title: string;
     people: ICustomer[];
+    isVisible = true;
+
+    changeVisibility() {
+        console.log('clicked button');
+        console.log(' is visible ', this.isVisible);
+
+        this.isVisible = !this.isVisible;
+        console.log(' is visible ', this.isVisible);
+    }
 
     constructor() { }
 

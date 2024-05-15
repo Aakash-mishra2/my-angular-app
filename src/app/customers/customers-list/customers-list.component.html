@@ -11,6 +11,10 @@
         background-color: grey;
     }
 
+    table>tr {
+        border-bottom: 2px solid grey;
+    }
+
     thead>tr>th {
         padding: 4px;
     }
@@ -26,24 +30,24 @@
             <th>Order Total</th>
         </tr>
     </thead>
-    <tr>
+    <tr *ngFor="let cust of filteredCustomers">
         <td>
             <a>
-
+                {{ cust.name}}
             </a>
         </td>
-        <td></td>
-        <td></td>
+        <td>{{ cust.city }} </td>
+        <td>{{ cust.orderTotal }}</td>
     </tr>
-    <tr>
+    <tr *ngIf="filteredCustomers && filteredCustomers.length">
         <td colspan="2">&nbsp;</td>
         <td>
-
+            {{ customersOrderTotal }}
         </td>
     </tr>
-    <tr>
+    <tr *ngIf="!filteredCustomers || !filteredCustomers.length">
         <td colspan="4">No customers found</td>
     </tr>
 </table>
-Number of Customers:
+Number of Customers: {{ filteredCustomers.length }}
 <br />
